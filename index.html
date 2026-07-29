@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jihwan Bae — Industrial Engineering, Purdue University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F5F0;
+    --paper-2:#EFEEE7;
+    --ink:#182029;
+    --ink-soft:#4B5560;
+    --teal:#1F5F5B;
+    --teal-soft:#E2ECEA;
+    --gold:#B4823E;
+    --line:#D9D5C9;
+    --max:920px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,245,240,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:'Fraunces', serif; font-weight:600; font-size:19px; letter-spacing:0.01em;
+  }
+  .nav-mark span{color:var(--teal);}
+  nav.links{display:flex; gap:26px;}
+  nav.links a{
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:500;
+  }
+  nav.links a:hover{color:var(--teal); text-decoration:none;}
+  .nav-toggle{display:none;}
+
+  /* HERO */
+  .hero{
+    padding:88px 0 64px;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--teal); margin-bottom:18px; display:block;
+  }
+  h1.title{
+    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(36px,5vw,54px);
+    line-height:1.08; letter-spacing:-0.01em; margin-bottom:20px;
+  }
+  h1.title em{font-style:italic; color:var(--teal); font-weight:400;}
+  .hero p.lede{
+    font-size:18px; color:var(--ink-soft); max-width:46ch; margin-bottom:28px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:3px; font-size:14px; font-weight:500;
+    border:1px solid var(--ink); transition:all .15s ease;
+  }
+  .btn.primary{background:var(--ink); color:var(--paper);}
+  .btn.primary:hover{background:var(--teal); border-color:var(--teal); text-decoration:none;}
+  .btn.ghost{border-color:var(--line); color:var(--ink);}
+  .btn.ghost:hover{border-color:var(--ink); text-decoration:none;}
+
+  .hero-figure{position:relative;}
+  .photo-frame{
+    position:relative; border-radius:4px; overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:0 24px 48px -24px rgba(24,32,41,0.35);
+  }
+  .photo-frame img{width:100%; display:block; aspect-ratio:3/4; object-fit:cover; object-position:top center;}
+  .photo-tag{
+    position:absolute; bottom:-14px; left:-14px;
+    background:var(--paper); border:1px solid var(--line); border-radius:3px;
+    padding:10px 14px; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    color:var(--ink-soft); box-shadow:0 10px 24px -12px rgba(24,32,41,0.25);
+  }
+
+  /* Signature diagram */
+  .signature{padding:0 0 72px;}
+  .signature svg{width:100%; height:auto; display:block;}
+  .sig-caption{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft);
+    text-align:center; margin-top:14px; letter-spacing:0.02em;
+  }
+
+  section{padding:64px 0; border-top:1px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
+  .section-num{font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:13px;}
+  h2{font-family:'Fraunces', serif; font-weight:500; font-size:28px; letter-spacing:-0.01em;}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.6fr; gap:48px;}
+  .about-grid p{margin-bottom:16px; color:var(--ink-soft); max-width:62ch;}
+  .about-grid p strong{color:var(--ink); font-weight:600;}
+  .facts{display:flex; flex-direction:column; gap:18px;}
+  .fact dt{font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.07em; color:var(--teal); margin-bottom:4px;}
+  .fact dd{font-size:14.5px; color:var(--ink);}
+
+  /* Timeline */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line);
+  }
+  .t-item{position:relative; padding-bottom:38px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-28px; top:5px; width:10px; height:10px;
+    border-radius:50%; background:var(--paper); border:2px solid var(--teal);
+  }
+  .t-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:6px;}
+  .t-org{font-family:'Fraunces', serif; font-weight:600; font-size:19px;}
+  .t-date{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--gold); white-space:nowrap;}
+  .t-role{font-size:14px; color:var(--teal); font-weight:500; margin-bottom:6px;}
+  .t-desc{color:var(--ink-soft); font-size:14.5px; max-width:64ch;}
+  .t-loc{font-size:13px; color:var(--ink-soft); font-style:italic;}
+
+  /* Two-column section layout */
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+
+  /* Highlights / pubs */
+  .pub{border-left:2px solid var(--teal-soft); padding-left:18px; margin-bottom:24px;}
+  .pub:last-child{margin-bottom:0;}
+  .pub-tag{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:0.05em;}
+  .pub-title{font-weight:600; margin:4px 0 4px; font-size:15px;}
+  .pub-meta{font-size:13px; color:var(--ink-soft);}
+
+  .awards{list-style:none;}
+  .awards li{
+    display:flex; justify-content:space-between; gap:12px;
+    padding:12px 0; border-bottom:1px dashed var(--line); font-size:14.5px;
+  }
+  .awards li:last-child{border-bottom:none;}
+  .awards .a-year{font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:12.5px; white-space:nowrap;}
+
+  /* Skills */
+  .skill-row{display:flex; gap:14px; align-items:baseline; padding:10px 0; border-bottom:1px solid var(--line);}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-level{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--paper); background:var(--teal);
+    padding:3px 8px; border-radius:2px; flex-shrink:0; width:76px; text-align:center;
+  }
+  .skill-level.mod{background:var(--ink-soft);}
+  .skill-level.nov{background:var(--line); color:var(--ink-soft);}
+  .skill-list{font-size:14.5px; color:var(--ink-soft);}
+
+  /* Contact */
+  .contact{
+    background:var(--ink); color:var(--paper); border-radius:6px; padding:56px 48px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+  }
+  .contact h2{color:var(--paper);}
+  .contact p{color:#B9C2C7; max-width:44ch; margin-top:12px; font-size:15px;}
+  .contact-links{display:flex; flex-direction:column; gap:14px;}
+  .contact-links a{
+    color:var(--paper); font-size:15px; display:flex; align-items:center; gap:10px;
+    padding-bottom:12px; border-bottom:1px solid rgba(246,245,240,0.15);
+  }
+  .contact-links a:hover{color:var(--gold); text-decoration:none;}
+  .clabel{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase;
+    letter-spacing:0.07em; color:#8B98A0; width:64px; flex-shrink:0;
+  }
+
+  footer{padding:32px 0 48px; text-align:center; font-size:12.5px; color:var(--ink-soft);}
+
+  @media (max-width:820px){
+    nav.links{display:none;}
+    .hero{grid-template-columns:1fr; padding-top:56px;}
+    .hero-figure{max-width:320px;}
+    .about-grid, .two-col, .contact{grid-template-columns:1fr;}
+    .contact{padding:40px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-mark">Jihwan Bae<span>.</span></div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:none;">
+    <div>
+      <span class="eyebrow">Industrial Engineering · Human Factors</span>
+      <h1 class="title">Studying how people <em>choose</em>, and what changes their minds.</h1>
+      <p class="lede">I'm an incoming PhD student at the Edwardson School of Industrial Engineering, Purdue University, working across behavioral modeling, cognitive engineering, and human factors.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#education">View education &amp; experience</a>
+        <a class="btn ghost" href="mailto:liam22@kaist.ac.kr">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="photo-frame">
+        <img src="img/profile.jpg" alt="Portrait of Jihwan Bae">
+      </div>
+      <div class="photo-tag">West Lafayette, IN — Incoming Fall</div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE DIAGRAM -->
+  <div class="signature">
+    <svg viewBox="0 0 900 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a state-dependent choice model, showing how past experience shifts preference toward a chosen state over time">
+      <line x1="40" y1="65" x2="860" y2="65" stroke="#D9D5C9" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#4B5560">
+        <text x="40" y="30">t = 0</text>
+        <text x="40" y="98">baseline preference</text>
+        <text x="780" y="30" text-anchor="end">t = n</text>
+        <text x="860" y="98" text-anchor="end">state-dependent choice</text>
+      </g>
+      <circle cx="70" cy="65" r="6" fill="#F6F5F0" stroke="#1F5F5B" stroke-width="2"/>
+      <path d="M 70 65 C 220 20, 320 95, 430 55" fill="none" stroke="#B4823E" stroke-width="1.6" stroke-dasharray="3 4"/>
+      <circle cx="430" cy="55" r="6" fill="#F6F5F0" stroke="#B4823E" stroke-width="2"/>
+      <path d="M 430 55 C 540 20, 640 95, 760 40" fill="none" stroke="#1F5F5B" stroke-width="1.6"/>
+      <circle cx="760" cy="40" r="7" fill="#1F5F5B"/>
+      <text x="760" y="20" font-family="Fraunces, serif" font-size="13" fill="#1F5F5B" text-anchor="middle" font-weight="600">chosen state</text>
+    </svg>
+    <div class="sig-caption">A stylized read on the choice-modeling problem at the center of my research: separating what people prefer from what habit makes them do.</div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="facts">
+        <div class="fact"><dt>Based in</dt><dd>West Lafayette, Indiana, US<br>(via Daejeon &amp; Seoul, Korea)</dd></div>
+        <div class="fact"><dt>Focus</dt><dd>Behavioral modeling, cognitive engineering, human factors</dd></div>
+        <div class="fact"><dt>Domain</dt><dd>Healthcare decision-making, driver alertness</dd></div>
+        <div class="fact"><dt>Languages</dt><dd>Korean (native), English (fluent)</dd></div>
+      </div>
+      <div>
+        <p><strong>I build models of how people decide, and how experience changes those decisions.</strong> Most recently that meant separating a patient's evolving preferences from the sheer inertia of past hospital visits — teasing apart what someone actually prefers from what habit and history make them do.</p>
+        <p>Before Purdue, I completed a Master's in Data Science at KAIST and a dual Bachelor's in Industrial &amp; Management Engineering and Artificial Intelligence at Korea University. Along the way I've worked with multimodal physiological data (EEG, ECG), Bayesian filtering for epidemic modeling, and MDP-based resource allocation — different problems, the same underlying question about how agents choose under uncertainty.</p>
+        <p>Outside the lab: strategic board games, an unreasonable amount of coffee, guitar, and a Korean-language engineering blog where I re-explain papers I had to read twice to understand once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">Purdue University</span>
+          <span class="t-date">2026 — Present</span>
+        </div>
+        <div class="t-role">PhD, Industrial Engineering (Human Factors)</div>
+        <div class="t-desc">Edwardson School of Industrial Engineering. <span class="t-loc">West Lafayette, IN, US</span></div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">Korea Advanced Institute of Science and Technology (KAIST)</span>
+          <span class="t-date">Aug 2024 — Jun 2026</span>
+        </div>
+        <div class="t-role">Master of Science, Data Science</div>
+        <div class="t-desc">Total GPA 3.67 / 4.00. <span class="t-loc">Daejeon, Korea</span></div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">Korea University</span>
+          <span class="t-date">Mar 2019 — Aug 2024</span>
+        </div>
+        <div class="t-role">B.S. Industrial &amp; Management Engineering — B.S. Artificial Intelligence (Interdisciplinary Major)</div>
+        <div class="t-desc">Total GPA 3.75 / 4.00. <span class="t-loc">Seoul, Korea</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">Healthcare Ergonomics Analytics Lab (HEAL), Purdue University</span>
+          <span class="t-date">Jun — Aug 2025</span>
+        </div>
+        <div class="t-role">Visiting Researcher</div>
+        <div class="t-desc">Analyzed multimodal driving data (EEG, ECG, subjective reports) from a Purdue–Ford collaboration evaluating multi-sensory stimulation on driver alertness; confirmed significant alertness gains via subjective ratings and EEG analysis. <span class="t-loc">West Lafayette, US</span></div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">Data Science &amp; AI Lab (DSAIL), KAIST</span>
+          <span class="t-date">Dec 2022 — Feb 2023</span>
+        </div>
+        <div class="t-role">Research Intern</div>
+        <div class="t-desc">Weekly paper reviews on representation learning, recommendation systems, and graph structures; contributed to research on conceptual understanding and inference for human-like AI. <span class="t-loc">Daejeon, Korea</span></div>
+      </div>
+      <div class="t-item">
+        <div class="t-head">
+          <span class="t-org">KOUNOSOFT (Industry–University Cooperation)</span>
+          <span class="t-date">Jun — Aug 2023</span>
+        </div>
+        <div class="t-role">Research Intern</div>
+        <div class="t-desc">Built a raw-data processing pipeline for a security firm's counterfeit-identification model, using MODE360 for image capture and preprocessing. <span class="t-loc">Seoul, Korea</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & AWARDS -->
+  <section id="research">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Research &amp; Recognition</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="pub">
+          <span class="pub-tag">SSRN Preprint · 2025</span>
+          <div class="pub-title">Decomposing Experience Effects in Hospital Choice: State Dependence and Preference Evolution</div>
+          <div class="pub-meta">Bae, J., Kim, J., &amp; Lee, T. — separates preference evolution from state dependence in hospital choice, showing how accumulated healthcare experience reshapes attribute sensitivity.</div>
+        </div>
+        <div class="pub">
+          <span class="pub-tag">KIIE Annual Fall Conference · 2025</span>
+          <div class="pub-title">Disentangling Experience and Attribute Effects in State-Dependent Hospital Choice</div>
+          <div class="pub-meta">A two-stage framework isolating pure experience effects from hospital attributes using total knee arthroplasty patient data.</div>
+        </div>
+        <div class="pub">
+          <span class="pub-tag">KIIE Annual Fall Conference · 2025</span>
+          <div class="pub-title">Emulating Pandemic-X Scenarios: A Semi-Mechanistic Framework with Bayesian Filtering</div>
+          <div class="pub-meta">Kim, M., Kim, J., Bae, J., &amp; Lee, T. — a data-assimilation approach estimating time-varying transmission rates from COVID-19 data for future pandemic planning.</div>
+        </div>
+      </div>
+      <div>
+        <ul class="awards">
+          <li><span>Veritas (Research) Scholarship — Korea University</span><span class="a-year">2023</span></li>
+          <li><span>Veritas (Educational) Scholarship — NAVER Connect Foundation</span><span class="a-year">2019</span></li>
+          <li><span>Semester High Honors — Korea University</span><span class="a-year">2020 · 2022 · 2023</span></li>
+          <li><span>Oracle Certified Professional, Java SE 6</span><span class="a-year">Cert.</span></li>
+          <li><span>Advanced Data Analytics Semi-Professional (ADSP)</span><span class="a-year">Cert.</span></li>
+        </ul>
+
+        <div style="margin-top:28px;">
+          <div class="skill-row"><span class="skill-level">Advanced</span><span class="skill-list">Python</span></div>
+          <div class="skill-row"><span class="skill-level mod">Moderate</span><span class="skill-list">C · HTML · JavaScript · Swift · CSS · SQL · R · MATLAB · Java</span></div>
+          <div class="skill-row"><span class="skill-level nov">Novice</span><span class="skill-list">SAS · LaTeX</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's talk.</h2>
+        <p>Open to conversations on human factors, behavioral modeling, and healthcare analytics — or just about the last paper that made you think twice.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:liam22@kaist.ac.kr"><span class="clabel">Email</span> liam22@kaist.ac.kr</a>
+        <a href="https://liam0222.tistory.com/" target="_blank" rel="noopener"><span class="clabel">Blog</span> liam0222.tistory.com</a>
+        <a href="https://github.com/BeigeHwan" target="_blank" rel="noopener"><span class="clabel">GitHub</span> github.com/BeigeHwan</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Jihwan Bae. Built with care, one hairline rule at a time.
+</footer>
+
+</body>
+</html>
