@@ -100,14 +100,6 @@
     color:var(--ink-soft); box-shadow:0 10px 24px -12px rgba(24,32,41,0.25);
   }
 
-  /* Signature diagram */
-  .signature{padding:0 0 72px;}
-  .signature svg{width:100%; height:auto; display:block;}
-  .sig-caption{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-soft);
-    text-align:center; margin-top:14px; letter-spacing:0.02em;
-  }
-
   section{padding:64px 0; border-top:1px solid var(--line);}
   .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
   .section-num{font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:13px;}
@@ -204,8 +196,8 @@
   <div class="nav-inner">
     <div class="nav-mark">Jihwan Bae<span>.</span></div>
     <nav class="links">
-      <a href="#about">About</a>
       <a href="#education">Education</a>
+      <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#research">Research</a>
       <a href="#contact">Contact</a>
@@ -219,66 +211,25 @@
   <section class="hero" style="border-top:none;">
     <div>
       <span class="eyebrow">Industrial Engineering · Human Factors</span>
-      <h1 class="title">Studying how people <em>choose</em>, and what changes their minds.</h1>
-      <p class="lede">I'm an incoming PhD student at the Edwardson School of Industrial Engineering, Purdue University, working across behavioral modeling, cognitive engineering, and human factors.</p>
+      <h1 class="title">I want to understand people — what they <em>choose</em>, and what their choices <em>don't fully explain</em>.</h1>
+      <p class="lede">I'm a PhD student at the Edwardson School of Industrial Engineering, Purdue University. I combine revealed choice data with physiological signals to get closer to what someone actually intends, not just what they report.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#education">View education &amp; experience</a>
-        <a class="btn ghost" href="mailto:liam22@kaist.ac.kr">Get in touch</a>
+        <a class="btn ghost" href="mailto:bae129@purdue.edu">Get in touch</a>
       </div>
     </div>
     <div class="hero-figure">
       <div class="photo-frame">
         <img src="img/profile.jpg" alt="Portrait of Jihwan Bae">
       </div>
-      <div class="photo-tag">West Lafayette, IN — Incoming Fall</div>
-    </div>
-  </section>
-
-  <!-- SIGNATURE DIAGRAM -->
-  <div class="signature">
-    <svg viewBox="0 0 900 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a state-dependent choice model, showing how past experience shifts preference toward a chosen state over time">
-      <line x1="40" y1="65" x2="860" y2="65" stroke="#D9D5C9" stroke-width="1"/>
-      <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#4B5560">
-        <text x="40" y="30">t = 0</text>
-        <text x="40" y="98">baseline preference</text>
-        <text x="780" y="30" text-anchor="end">t = n</text>
-        <text x="860" y="98" text-anchor="end">state-dependent choice</text>
-      </g>
-      <circle cx="70" cy="65" r="6" fill="#F6F5F0" stroke="#1F5F5B" stroke-width="2"/>
-      <path d="M 70 65 C 220 20, 320 95, 430 55" fill="none" stroke="#B4823E" stroke-width="1.6" stroke-dasharray="3 4"/>
-      <circle cx="430" cy="55" r="6" fill="#F6F5F0" stroke="#B4823E" stroke-width="2"/>
-      <path d="M 430 55 C 540 20, 640 95, 760 40" fill="none" stroke="#1F5F5B" stroke-width="1.6"/>
-      <circle cx="760" cy="40" r="7" fill="#1F5F5B"/>
-      <text x="760" y="20" font-family="Fraunces, serif" font-size="13" fill="#1F5F5B" text-anchor="middle" font-weight="600">chosen state</text>
-    </svg>
-    <div class="sig-caption">A stylized read on the choice-modeling problem at the center of my research: separating what people prefer from what habit makes them do.</div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2>About</h2>
-    </div>
-    <div class="about-grid">
-      <div class="facts">
-        <div class="fact"><dt>Based in</dt><dd>West Lafayette, Indiana, US<br>(via Daejeon &amp; Seoul, Korea)</dd></div>
-        <div class="fact"><dt>Focus</dt><dd>Behavioral modeling, cognitive engineering, human factors</dd></div>
-        <div class="fact"><dt>Domain</dt><dd>Healthcare decision-making, driver alertness</dd></div>
-        <div class="fact"><dt>Languages</dt><dd>Korean (native), English (fluent)</dd></div>
-      </div>
-      <div>
-        <p><strong>I build models of how people decide, and how experience changes those decisions.</strong> Most recently that meant separating a patient's evolving preferences from the sheer inertia of past hospital visits — teasing apart what someone actually prefers from what habit and history make them do.</p>
-        <p>Before Purdue, I completed a Master's in Data Science at KAIST and a dual Bachelor's in Industrial &amp; Management Engineering and Artificial Intelligence at Korea University. Along the way I've worked with multimodal physiological data (EEG, ECG), Bayesian filtering for epidemic modeling, and MDP-based resource allocation — different problems, the same underlying question about how agents choose under uncertainty.</p>
-        <p>Outside the lab: strategic board games, an unreasonable amount of coffee, guitar, and a Korean-language engineering blog where I re-explain papers I had to read twice to understand once.</p>
-      </div>
+      <div class="photo-tag">West Lafayette, IN — PhD Student</div>
     </div>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-head">
-      <span class="section-num">02</span>
+      <span class="section-num">01</span>
       <h2>Education</h2>
     </div>
     <div class="timeline">
@@ -287,7 +238,7 @@
           <span class="t-org">Purdue University</span>
           <span class="t-date">2026 — Present</span>
         </div>
-        <div class="t-role">PhD, Industrial Engineering (Human Factors)</div>
+        <div class="t-role">PhD Student, Industrial Engineering (Human Factors)</div>
         <div class="t-desc">Edwardson School of Industrial Engineering. <span class="t-loc">West Lafayette, IN, US</span></div>
       </div>
       <div class="t-item">
@@ -295,16 +246,37 @@
           <span class="t-org">Korea Advanced Institute of Science and Technology (KAIST)</span>
           <span class="t-date">Aug 2024 — Jun 2026</span>
         </div>
-        <div class="t-role">Master of Science, Data Science</div>
+        <div class="t-role">M.S., Graduate School of Data Science</div>
         <div class="t-desc">Total GPA 3.67 / 4.00. <span class="t-loc">Daejeon, Korea</span></div>
       </div>
       <div class="t-item">
         <div class="t-head">
           <span class="t-org">Korea University</span>
-          <span class="t-date">Mar 2019 — Aug 2024</span>
+          <span class="t-date">Aug 2024</span>
         </div>
-        <div class="t-role">B.S. Industrial &amp; Management Engineering — B.S. Artificial Intelligence (Interdisciplinary Major)</div>
+        <div class="t-role">B.S. Industrial &amp; Management Engineering — B.E. Artificial Intelligence</div>
         <div class="t-desc">Total GPA 3.75 / 4.00. <span class="t-loc">Seoul, Korea</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="facts">
+        <div class="fact"><dt>Based in</dt><dd>West Lafayette, Indiana, US<br>(via Daejeon &amp; Seoul, Korea)</dd></div>
+        <div class="fact"><dt>Research interests</dt><dd>Behavioral science, econometrics, human factors</dd></div>
+        <div class="fact"><dt>Domain</dt><dd>Healthcare decision-making</dd></div>
+        <div class="fact"><dt>Languages</dt><dd>Korean (native), English (fluent)</dd></div>
+      </div>
+      <div>
+        <p><strong>I build models of how people decide, and how experience changes those decisions.</strong> Most recently that meant separating a patient's evolving preferences from the sheer inertia of past hospital visits — teasing apart what someone actually prefers from what habit and history make them do.</p>
+        <p>I've come to trust two kinds of evidence about people: what they reveal through the choices they actually make, and what their bodies register whether they mean to show it or not. Along the way I've worked with multimodal physiological data (EEG, ECG), Bayesian filtering for epidemic modeling, and MDP-based resource allocation — different problems, the same underlying question about how people decide under uncertainty.</p>
+        <p>Outside the lab: strategic board games, an unreasonable amount of coffee, guitar, and a Korean-language engineering blog where I re-explain papers I had to read twice to understand once.</p>
       </div>
     </div>
   </section>
@@ -352,19 +324,24 @@
     <div class="two-col">
       <div>
         <div class="pub">
-          <span class="pub-tag">SSRN Preprint · 2025</span>
+          <span class="pub-tag">Working Paper</span>
           <div class="pub-title">Decomposing Experience Effects in Hospital Choice: State Dependence and Preference Evolution</div>
-          <div class="pub-meta">Bae, J., Kim, J., &amp; Lee, T. — separates preference evolution from state dependence in hospital choice, showing how accumulated healthcare experience reshapes attribute sensitivity.</div>
+          <div class="pub-meta">Bae, J., Kim, J., &amp; Lee, T. — separates preference evolution from state dependence in hospital choice, showing how accumulated healthcare experience reshapes attribute sensitivity. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5803625" target="_blank" rel="noopener">SSRN</a></div>
         </div>
         <div class="pub">
-          <span class="pub-tag">KIIE Annual Fall Conference · 2025</span>
-          <div class="pub-title">Disentangling Experience and Attribute Effects in State-Dependent Hospital Choice</div>
-          <div class="pub-meta">A two-stage framework isolating pure experience effects from hospital attributes using total knee arthroplasty patient data.</div>
+          <span class="pub-tag">2026 KIIE Annual Spring Conference · Jun 5, 2026</span>
+          <div class="pub-title">Constructed Experience Measure and Hospital Choice: Decomposing Preference Heterogeneity and State Dependence</div>
+          <div class="pub-meta">Bae, J., Kim, J., &amp; Lee, T. — Gyeongju, Korea.</div>
         </div>
         <div class="pub">
-          <span class="pub-tag">KIIE Annual Fall Conference · 2025</span>
+          <span class="pub-tag">2025 KIIE Annual Fall Conference · Nov 7, 2025</span>
+          <div class="pub-title">Disentangling Experience and Attribute Effects in State Dependence Hospital Choice Model</div>
+          <div class="pub-meta">Bae, J., Kim, J., &amp; Lee, T. — Daejeon, Korea. A two-stage framework isolating pure experience effects from hospital attributes using total knee arthroplasty patient data.</div>
+        </div>
+        <div class="pub">
+          <span class="pub-tag">2025 KIIE Annual Fall Conference · Nov 7, 2025</span>
           <div class="pub-title">Emulating Pandemic-X Scenarios: A Semi-Mechanistic Framework with Bayesian Filtering</div>
-          <div class="pub-meta">Kim, M., Kim, J., Bae, J., &amp; Lee, T. — a data-assimilation approach estimating time-varying transmission rates from COVID-19 data for future pandemic planning.</div>
+          <div class="pub-meta">Kim, M., Kim, J., Bae, J., &amp; Lee, T. — Daejeon, Korea. A data-assimilation approach estimating time-varying transmission rates from COVID-19 data for future pandemic planning.</div>
         </div>
       </div>
       <div>
@@ -393,9 +370,7 @@
         <p>Open to conversations on human factors, behavioral modeling, and healthcare analytics — or just about the last paper that made you think twice.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:liam22@kaist.ac.kr"><span class="clabel">Email</span> liam22@kaist.ac.kr</a>
-        <a href="https://liam0222.tistory.com/" target="_blank" rel="noopener"><span class="clabel">Blog</span> liam0222.tistory.com</a>
-        <a href="https://github.com/BeigeHwan" target="_blank" rel="noopener"><span class="clabel">GitHub</span> github.com/BeigeHwan</a>
+        <a href="mailto:bae129@purdue.edu"><span class="clabel">Email</span> bae129@purdue.edu</a>
       </div>
     </div>
   </section>
